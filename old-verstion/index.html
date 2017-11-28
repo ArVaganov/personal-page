@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="favicon.ico">
+    <title>ArV Front-End Engineer</title>
+</head>
+<body>
+    <style>
+        #power {
+            font-size: 14pt;
+            font-family: monospace;
+        }
+        img {
+            max-height: 300px;
+            margin-right: 20px;
+        }
+        audio {
+            width: 949px;
+            border: 4px solid lightsteelblue;
+            margin: 10px 0;
+        }
+
+    </style>
+    <h1>Wow! Awesome page! Such design, many code!</h1>
+    <div id="power"></div>
+    <div>
+        <audio src="./grand-prix.mp3" autoplay controls></audio>
+    </div>
+    <img src="https://tr2.cbsistatic.com/hub/i/2014/05/15/f8964afd-bd82-4e0e-bcbe-e927363dcdc1/3b858e39e2cf183b878f54cad0073a67/codedoge.jpg">
+    <img src="https://i.ytimg.com/vi/O8hvj1ETUa4/maxresdefault.jpg">
+    <pre id="p"><script>n=setInterval("for(n+=7,i=k,P='p.\\n';i-=1/k;P+=P[i%2?(i%2*j-j+n/k^j)&1:2])j=k/i;p.innerHTML=P",k=64)</script>
+    <script>
+        let renderRandoms = () => {
+            document.getElementById('power').innerHTML = (Math.random() * 20000 + 10000)
+        }
+        setInterval(renderRandoms, 50)
+    </script>
+</body>
+</html>
