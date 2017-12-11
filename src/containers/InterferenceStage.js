@@ -6,15 +6,14 @@ class InerferenceStage extends Component {
         super()
 
         this.state = {
-            angle: 0,
-            radius: 80,
-            prismDecartCords: {}
+            prismAngle: 0,
+            prismRadius: 80,
+            prismDecartCoordinates: {}
         }
     }
 
     componentWillMount() {
-        let {angle, radius} = this.state
-        this.computePrismCords(angle, radius)
+        this.computePrismCords()
     }
 
     componentDidMount() {
@@ -23,27 +22,29 @@ class InerferenceStage extends Component {
 
     rotatePrism = () => {
         this.setState(prevState => {
-            return prevState.angle > 2 * Math.PI ? {angle: 0} : {angle: prevState.angle + 0.01}
+            return prevState.prismAngle > 2 * Math.PI ? {prismAngle: 0} : {prismAngle: prevState.prismAngle + 0.01}
         }, () => {
-            this.computePrismCords(this.state.angle, this.state.radius)
+            this.computePrismCords()
         })
     }
 
-    computePrismCords = (angle, radius) => {
+    computePrismCords = () => {
         this.setState(() => {
-            let [first, second, third] = ((angle) => {
+            let {prismAngle, prismRadius} = this.state
+            let [firstPointAngle, secondPointAngle, thirdPointAngle] = ((prismAngle) => {
+
                 return [
-                    angle,
-                    2 * Math.PI/3 + angle,
-                    4 * Math.PI/3 + angle
+                    prismAngle,
+                    prismAngle + 2 * Math.PI/3,
+                    prismAngle + 4 * Math.PI/3
                 ]
-            })(angle)
+            })(prismAngle)
 
             return {
-                prismDecartCords: {
-                    A: `${Math.cos(first) * radius}, ${Math.sin(first) * radius}`,
-                    B: `${Math.cos(second) * radius}, ${Math.sin(second) * radius}`,
-                    C: `${Math.cos(third) * radius}, ${Math.sin(third) * radius}`
+                prismDecartCoordinates: {
+                    A: `${Math.cos(firstPointAngle) * prismRadius}, ${Math.sin(firstPointAngle) * prismRadius}`,
+                    B: `${Math.cos(secondPointAngle) * prismRadius}, ${Math.sin(secondPointAngle) * prismRadius}`,
+                    C: `${Math.cos(thirdPointAngle) * prismRadius}, ${Math.sin(thirdPointAngle) * prismRadius}`
                 }
             }
         })
@@ -52,7 +53,7 @@ class InerferenceStage extends Component {
     render() {
 
         return (
-            <Prism coordinates={this.state.prismDecartCords} radius={this.state.radius}/>
+            <Prism coordinates={this.state.prismDecartCoordinates} radius={this.state.prismRadius}/>
         )
     }
 }
