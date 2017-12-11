@@ -1,19 +1,17 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import './Test.css'
+import React, { Component } from 'react'
+import InterferenceStage from './containers/InterferenceStage'
+import './App.css'
+
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Добро пожаловать</h2>
-          <h2 className="testclasses">Yo yo here!</h2>
+          <InterferenceStage/>
         </div>
         <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
+          Welcome to ArVaganov personal webpage
         </p>
       </div>
     );
