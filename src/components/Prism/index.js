@@ -8,11 +8,11 @@ const Prism = (props) => {
             <circle cx="0"
                 cy="0"
                 r={props.radius - 10}
-                transform="translate(200, 90)"
+                transform={`translate(${document.body.clientWidth / 2}, 90)`}
                 fill="transparent"
                 stroke='dimgray'
                 strokeWidth='2' />
-            <polygon points={`${A}, ${B}, ${C}`} transform="translate(200, 90)" />
+            <polygon points={`${A}, ${B}, ${C}`} transform={`translate(${document.body.clientWidth / 2}, 90)`} />
         </svg>
     )
 }

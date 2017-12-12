@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Prism from '../../components/Prism'
+import Beam from '../../components/Beam'
 
 class InerferenceStage extends Component {
     constructor() {
@@ -8,7 +9,30 @@ class InerferenceStage extends Component {
         this.state = {
             prismAngle: 0,
             prismRadius: 80,
-            prismDecartCoordinates: {}
+            prismDecartCoordinates: {},
+            beams: [
+                {
+                    color: '#ca7c7c',
+                    yAxis: -15,
+                    angle: 0
+                },
+                {
+                    color: '#65ad65',
+                    yAxis: -5,
+                    angle: -0
+                },
+                {
+                    color: '#5f98bb',
+                    yAxis: 5,
+                    angle: 0
+                },
+                {
+                    color: '#b75ab7',
+                    yAxis: 15,
+                    angle: 0
+                },
+
+            ]
         }
     }
 
@@ -50,10 +74,22 @@ class InerferenceStage extends Component {
         })
     }
 
+    computeSecondCords = (el) => {
+        let y2 = el.yAxis + 1200 * Math.tan(el.angle)
+        return { x2: 0, y2: y2 }
+    }
+
     render() {
+        let beams = this.state.beams.map((el, index) => <Beam
+            coordinates={{ x1: -document.body.clientWidth / 2, y1: el.yAxis, ...this.computeSecondCords(el) }}
+            key={index}
+            color={el.color} />)
 
         return (
-            <Prism coordinates={this.state.prismDecartCoordinates} radius={this.state.prismRadius} />
+            <div>
+                <Prism coordinates={this.state.prismDecartCoordinates} radius={this.state.prismRadius} />
+                {beams}
+            </div>
         )
     }
 }
