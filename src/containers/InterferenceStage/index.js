@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Prism from '../components/Prism'
+import Prism from '../../components/Prism'
 
 class InerferenceStage extends Component {
     constructor() {
@@ -22,7 +22,7 @@ class InerferenceStage extends Component {
 
     rotatePrism = () => {
         this.setState(prevState => {
-            return prevState.prismAngle > 2 * Math.PI ? {prismAngle: 0} : {prismAngle: prevState.prismAngle + 0.01}
+            return prevState.prismAngle > 2 * Math.PI ? { prismAngle: 0 } : { prismAngle: prevState.prismAngle + 0.01 }
         }, () => {
             this.computePrismCords()
         })
@@ -30,13 +30,13 @@ class InerferenceStage extends Component {
 
     computePrismCords = () => {
         this.setState(() => {
-            let {prismAngle, prismRadius} = this.state
+            let { prismAngle, prismRadius } = this.state
             let [firstPointAngle, secondPointAngle, thirdPointAngle] = ((prismAngle) => {
 
                 return [
                     prismAngle,
-                    prismAngle + 2 * Math.PI/3,
-                    prismAngle + 4 * Math.PI/3
+                    prismAngle + 2 * Math.PI / 3,
+                    prismAngle + 4 * Math.PI / 3
                 ]
             })(prismAngle)
 
@@ -49,11 +49,11 @@ class InerferenceStage extends Component {
             }
         })
     }
-    
+
     render() {
 
         return (
-            <Prism coordinates={this.state.prismDecartCoordinates} radius={this.state.prismRadius}/>
+            <Prism coordinates={this.state.prismDecartCoordinates} radius={this.state.prismRadius} />
         )
     }
 }
