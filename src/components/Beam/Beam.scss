@@ -6,6 +6,11 @@ svg {
     height: 180px;
 }
 
-line {
-    stroke-width: 3;
+path {
+    stroke-width: 2;
+    fill: transparent;
+}
+
+circle {
+    stroke: #fff;
 }
