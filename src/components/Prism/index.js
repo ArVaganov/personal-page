@@ -12,7 +12,7 @@ const Prism = (props) => {
                 fill="transparent"
                 stroke='dimgray'
                 strokeWidth='2' />
-            <polygon points={`${A}, ${B}, ${C}`} transform={`translate(${document.body.clientWidth / 2}, 90)`} />
+            <polygon points={`${A[0]},${A[1]}, ${B[0]},${B[1]}, ${C[0]},${C[1]}`} transform={`translate(${document.body.clientWidth / 2}, 90)`} />
         </svg>
     )
 }

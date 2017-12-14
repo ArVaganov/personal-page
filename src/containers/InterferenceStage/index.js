@@ -13,25 +13,20 @@ class InerferenceStage extends Component {
             beams: [
                 {
                     color: '#ca7c7c',
-                    yAxis: -15,
-                    angle: 0
+                    yAxis: -6,
                 },
                 {
                     color: '#65ad65',
-                    yAxis: -5,
-                    angle: -0
+                    yAxis: -2,
                 },
                 {
                     color: '#5f98bb',
-                    yAxis: 5,
-                    angle: 0
+                    yAxis: 2,
                 },
                 {
                     color: '#b75ab7',
-                    yAxis: 15,
-                    angle: 0
+                    yAxis: 6,
                 },
-
             ]
         }
     }
@@ -41,12 +36,12 @@ class InerferenceStage extends Component {
     }
 
     componentDidMount() {
-        setInterval(this.rotatePrism, 10)
+        setInterval(this.rotatePrism, 20)
     }
 
     rotatePrism = () => {
         this.setState(prevState => {
-            return prevState.prismAngle > 2 * Math.PI ? { prismAngle: 0 } : { prismAngle: prevState.prismAngle + 0.01 }
+            return prevState.prismAngle > 2 * Math.PI ? { prismAngle: 0 } : { prismAngle: prevState.prismAngle + 0.007 }
         }, () => {
             this.computePrismCords()
         })
@@ -66,17 +61,64 @@ class InerferenceStage extends Component {
 
             return {
                 prismDecartCoordinates: {
-                    A: `${Math.cos(firstPointAngle) * prismRadius}, ${Math.sin(firstPointAngle) * prismRadius}`,
-                    B: `${Math.cos(secondPointAngle) * prismRadius}, ${Math.sin(secondPointAngle) * prismRadius}`,
-                    C: `${Math.cos(thirdPointAngle) * prismRadius}, ${Math.sin(thirdPointAngle) * prismRadius}`
+                    A: [Math.cos(firstPointAngle) * prismRadius, Math.sin(firstPointAngle) * prismRadius],
+                    B: [Math.cos(secondPointAngle) * prismRadius, Math.sin(secondPointAngle) * prismRadius],
+                    C: [Math.cos(thirdPointAngle) * prismRadius, Math.sin(thirdPointAngle) * prismRadius]
                 }
             }
         })
     }
 
-    computeSecondCords = (el) => {
-        let y2 = el.yAxis + 1200 * Math.tan(el.angle)
-        return { x2: 0, y2: y2 }
+    computeStraitCollision(x1, y1, x2, y2, x3, y3, x4, y4) {
+        let x = ((x1 * y2 - y1 * x2) * (x3 - x4) - (x1 - x2) * (x3 * y4 - y3 * x4)) /
+            ((x1 - x2) * (y3 - y4) - (y1 - y2) * (x3 - x4))
+        let y = ((x1 * y2 - y1 * x2) * (y3 - y4) - (y1 - y2) * (x3 * y4 - y3 * x4)) /
+            ((x1 - x2) * (y3 - y4) - (y1 - y2) * (x3 - x4))
+
+        return [x, y]
+    }
+
+    computeSecondCords = el => {
+        let collisions = []
+        let { A, B, C } = this.state.prismDecartCoordinates
+
+        collisions.push(this.computeStraitCollision(
+            -document.body.clientWidth,
+            el.yAxis,
+            0,
+            el.yAxis,
+            A[0],
+            A[1],
+            B[0],
+            B[1]
+        ))
+
+        collisions.push(this.computeStraitCollision(
+            -document.body.clientWidth,
+            el.yAxis,
+            0,
+            el.yAxis,
+            B[0],
+            B[1],
+            C[0],
+            C[1]
+        ))
+
+        collisions.push(this.computeStraitCollision(
+            -document.body.clientWidth,
+            el.yAxis,
+            0,
+            el.yAxis,
+            C[0],
+            C[1],
+            A[0],
+            A[1]
+        ))
+
+        let [x, y] = collisions.sort((a, b) => {
+             return (a[0] < b[0]) ? 1 : -1 })[1]
+
+        return { x2: x, y2: y }
     }
 
     render() {
