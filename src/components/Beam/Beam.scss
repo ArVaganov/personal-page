@@ -1,4 +1,4 @@
-svg {
+.beam__scene {
     shape-rendering: geometricPrecision;
     position: absolute;
     left: 0;
@@ -6,11 +6,11 @@ svg {
     height: 180px;
 }
 
-path {
+.beam__ray {
     stroke-width: 2;
     fill: transparent;
 }
 
-circle {
+.beam__collistion-point {
     stroke: #fff;
 }
