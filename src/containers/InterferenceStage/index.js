@@ -13,23 +13,19 @@ class InerferenceStage extends Component {
             beams: [
                 {
                     color: '#ca7c7c',
-                    yAxis: -6,
-                    n: 12
+                    yAxis: -6
                 },
                 {
                     color: '#65ad65',
-                    yAxis: -2,
-                    n: 12
+                    yAxis: -2
                 },
                 {
                     color: '#5f98bb',
-                    yAxis: 2,
-                    n: 12
+                    yAxis: 2
                 },
                 {
                     color: '#b75ab7',
-                    yAxis: 6,
-                    n: 12
+                    yAxis: 6
                 },
             ]
         }
@@ -99,7 +95,7 @@ class InerferenceStage extends Component {
             return (Math.abs(a[0]) < this.state.prismRadius && a[0] < 0) ? -1 : 1
         })[0]
 
-        let [x3, y3] = this.collisionsArrayFormation(x2, y2, -1 * Math.cos(el.n), el.yAxis * Math.sin(el.n)).sort((a, b) => {
+        let [x3, y3] = this.collisionsArrayFormation(x2, y2, -1 * Math.cos(12), el.yAxis * Math.sin(12)).sort((a, b) => {
             return (Math.abs(a[0]) < this.state.prismRadius && a[0] > 0) ? -1 : 1
         })[0]
 
@@ -110,7 +106,7 @@ class InerferenceStage extends Component {
 
     render() {
         let beams = this.state.beams.map((el, index) => <Beam
-            coordinates={{ x1: -document.body.clientWidth / 2, y1: el.yAxis, ...this.computeCords(el) }}
+            coordinates={{ x1: -document.body.clientWidth / 2, y1: el.yAxis * 4, ...this.computeCords(el) }}
             key={index}
             color={el.color}
         />)
