@@ -1,6 +1,13 @@
 @import "../../shared/variables.scss";
 
 .navigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
     height: 40px;
     background-color: $primary-dark;
+    margin: 0;
+    padding: 0;
 }

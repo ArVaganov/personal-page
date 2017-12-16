@@ -100,7 +100,7 @@ class InerferenceStage extends Component {
             return (Math.abs(a[0]) < this.state.prismRadius && a[0] > 0) ? -1 : 1
         })[0]
 
-        let [x4, y4] = [document.body.clientWidth / 2, y3 - el.yAxis * 2]
+        let [x4, y4] = [document.body.clientWidth / 2, -el.yAxis * 4]
 
         return { x2: x2, y2: y2, x3: x3, y3: y3, x4: x4, y4: y4 }
     }
