@@ -5,12 +5,12 @@ import NavItem from '../../components/NavItem'
 const Navigation = () => {
     let links = [
         { label: 'Skills', url: 'cv', active: true },
-        { label: 'About Me', url: 'bio', active: false },
-        { label: 'Portfolio', url: 'portfolio', active: false },
-        { label: 'Blog', url: 'blog', active: false }
+        { label: 'About Me', url: 'bio' },
+        { label: 'Portfolio', url: 'portfolio' },
+        { label: 'Blog', url: 'blog' }
     ]
 
-    links = links.map(link => <NavItem label={link.label} url={link.url} active={link.active}/>)
+    links = links.map(link => <NavItem label={link.label} url={link.url} active={link.active} />)
     return (
         <div className="navigation">
             {links}

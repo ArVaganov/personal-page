@@ -4,9 +4,7 @@ import cx from 'classnames'
 
 const NavItem = (props) => {
     return (
-        <div className="navigation__item">
-            <a className={cx('navigation__link', {'navigation__link_active': props.active})} href={props.url}>{props.label}</a>
-        </div>
+        <a className={cx({'navigation__link_active': props.active}, {'navigation__link': !props.active})} href={props.url}>{props.label}</a>
     )
 }
 
