@@ -4,7 +4,7 @@ import './Prism.css'
 const Prism = (props) => {
     let { A, B, C } = props.coordinates
     return (
-        <svg className="prism__scene">
+        <svg className="prism">
             <circle className="prism__circle"
                 cx="0"
                 cy="0"

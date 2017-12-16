@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Navigation from '../../components/Navigation'
 import InterferenceStage from '../../containers/InterferenceStage'
 import './FrontPage.css'
 
@@ -6,13 +7,9 @@ import './FrontPage.css'
 class FrontPage extends Component {
     render() {
         return (
-            <div className="App">
-                <div className="App-header">
-                    <InterferenceStage />
-                </div>
-                <p className="App-intro">
-                    Welcome to ArVaganov personal webpage
-        </p>
+            <div>
+                <Navigation />
+                <InterferenceStage />
             </div>
         );
     }

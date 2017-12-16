@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Prism from '../../components/Prism'
 import Beam from '../../components/Beam'
+import './InterferenceStage.css'
 
 class InerferenceStage extends Component {
     constructor() {
@@ -95,7 +96,7 @@ class InerferenceStage extends Component {
             return (Math.abs(a[0]) < this.state.prismRadius && a[0] < 0) ? -1 : 1
         })[0]
 
-        let [x3, y3] = this.collisionsArrayFormation(x2, y2, -1 * Math.cos(12), el.yAxis * Math.sin(12)).sort((a, b) => {
+        let [x3, y3] = this.collisionsArrayFormation(x2, y2, 0, 0).sort((a, b) => {
             return (Math.abs(a[0]) < this.state.prismRadius && a[0] > 0) ? -1 : 1
         })[0]
 
@@ -112,10 +113,10 @@ class InerferenceStage extends Component {
         />)
 
         return (
-            <div>
+            <section className="interference-stage">
                 <Prism coordinates={this.state.prismDecartCoordinates} radius={this.state.prismRadius} />
                 {beams}
-            </div>
+            </section>
         )
     }
 }
