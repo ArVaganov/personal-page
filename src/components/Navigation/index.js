@@ -2,15 +2,16 @@ import React from 'react'
 import './Navigation.css'
 import NavItem from '../../components/NavItem'
 
-const Navigation = () => {
+const Navigation = (props) => {
     let links = [
-        { label: 'Skills', url: 'cv', active: true },
-        { label: 'About Me', url: 'bio' },
-        { label: 'Portfolio', url: 'portfolio' },
-        { label: 'Blog', url: 'blog' }
+        { label: 'Skills', url: '/skills' },
+        { label: 'About Me', url: '/bio' },
+        { label: 'Portfolio', url: '/portfolio' },
+        { label: 'Web log', url: '/log' }
     ]
 
-    links = links.map(link => <NavItem label={link.label} url={link.url} active={link.active} key={link.label} />)
+    links = links.map(link => <NavItem label={link.label} url={link.url} active={props.location.pathname === link.url} key={link.label} />)
+
     return (
         <div className="navigation">
             {links}

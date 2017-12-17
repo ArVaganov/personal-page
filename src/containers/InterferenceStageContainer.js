@@ -11,22 +11,10 @@ class InterferenceStageContainer extends Component {
             prismRadius: 75,
             prismDecartCoordinates: {},
             beams: [
-                {
-                    color: '#ca7c7c',
-                    yAxis: -6
-                },
-                {
-                    color: '#65ad65',
-                    yAxis: -2
-                },
-                {
-                    color: '#5f98bb',
-                    yAxis: 2
-                },
-                {
-                    color: '#b75ab7',
-                    yAxis: 6
-                },
+                { color: '#ca7c7c', yAxis: -6 },
+                { color: '#65ad65', yAxis: -2 },
+                { color: '#5f98bb', yAxis: 2 },
+                { color: '#b75ab7', yAxis: 6 },
             ]
         }
     }
@@ -35,8 +23,15 @@ class InterferenceStageContainer extends Component {
         this.computePrismCords()
     }
 
+    componentWillUnmount() {
+        clearInterval(this.state.rotationTimer)
+    }
+    
+
     componentDidMount() {
-        setInterval(this.rotatePrism, 20)
+        this.setState(() => {
+            return {rotationTimer: setInterval(this.rotatePrism, 20)}
+        })
     }
 
     rotatePrism = () => {
@@ -87,8 +82,6 @@ class InterferenceStageContainer extends Component {
 
         return collisions
     }
-
-
 
     computeCords = el => {
         let [x2, y2] = this.collisionsArrayFormation(-1, el.yAxis, 0, el.yAxis).sort((a, b) => {

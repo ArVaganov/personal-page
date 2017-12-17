@@ -3,8 +3,7 @@
 .navigation__link {
     padding: 10px;
     text-decoration: none;
-    color: $text-light;   
-    transition: 0.1s ease-in-out;
+    color: $text-light;
     &:hover {
         color: $text-faded;
     }
