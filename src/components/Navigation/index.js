@@ -10,7 +10,7 @@ const Navigation = () => {
         { label: 'Blog', url: 'blog' }
     ]
 
-    links = links.map(link => <NavItem label={link.label} url={link.url} active={link.active} />)
+    links = links.map(link => <NavItem label={link.label} url={link.url} active={link.active} key={link.label} />)
     return (
         <div className="navigation">
             {links}

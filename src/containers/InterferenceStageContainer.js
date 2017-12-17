@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
-import Prism from '../../components/Prism'
-import Beam from '../../components/Beam'
-import './InterferenceStage.css'
+import InterferenceStage from '../components/InterferenceStage'
+import Beam from '../components/Beam'
 
-class InerferenceStage extends Component {
+class InterferenceStageContainer extends Component {
     constructor() {
         super()
 
@@ -106,19 +105,18 @@ class InerferenceStage extends Component {
     }
 
     render() {
-        let beams = this.state.beams.map((el, index) => <Beam
+        let { prismDecartCoordinates, prismRadius } = this.state
+
+        let beams = this.state.beams.map(el => <Beam
             coordinates={{ x1: -document.body.clientWidth / 2, y1: el.yAxis * 4, ...this.computeCords(el) }}
-            key={index}
+            key={el.color}
             color={el.color}
         />)
 
         return (
-            <section className="interference-stage">
-                <Prism coordinates={this.state.prismDecartCoordinates} radius={this.state.prismRadius} />
-                {beams}
-            </section>
+            <InterferenceStage prism={{ coordinates: prismDecartCoordinates, radius: prismRadius }} beams={beams} />
         )
     }
 }
 
-export default InerferenceStage
+export default InterferenceStageContainer

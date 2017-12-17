@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Navigation from '../../components/Navigation'
-import InterferenceStage from '../../containers/InterferenceStage'
+import InterferenceStageContainer from '../../containers/InterferenceStageContainer'
 import './FrontPage.css'
 
 
@@ -9,7 +9,7 @@ class FrontPage extends Component {
         return (
             <div>
                 <Navigation />
-                <InterferenceStage />
+                <InterferenceStageContainer />
             </div>
         );
     }
