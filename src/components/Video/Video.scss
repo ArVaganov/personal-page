@@ -1,0 +1,25 @@
+.overlay {
+    background-image: url(./pattern.png);
+    z-index: 5;
+    position: fixed;
+    width: 100%;
+    height: 200px;
+    background-size: 3px;
+}
+
+.is_overlay {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #fff; 
+    z-index: 1;
+}
+  
+.video__sources {
+    width: 100%;
+    height: 200px;
+}
+
+.video__container {
+    position: relative;
+}
