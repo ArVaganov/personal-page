@@ -1,6 +1,6 @@
 import React from 'react'
 import SkillsPage from '../../components/SkillsPage'
-import BioPage from '../../components/BioPage'
+import AboutPage from '../../components/AboutPage'
 import LogPage from '../../components/LogPage'
 import PortfolioPage from '../../components/PortfolioPage'
 import Navigation from '../../components/Navigation'
@@ -20,9 +20,10 @@ const App = () => (
             <Switch>
                 <Navigation />
             </Switch>
+            
             <Route path="/" exact component={() => <Redirect to="/skills" />} />
             <Route path="/skills" component={SkillsPage} />
-            <Route path="/bio" component={BioPage} />
+            <Route path="/about" component={AboutPage} />
             <Route path="/portfolio" component={PortfolioPage} />
             <Route path="/log" component={LogPage} />
         </div>

@@ -1,14 +1,14 @@
 import React from 'react'
 import PageLabel from '../../components/PageLabel'
 
-const LogPage = () => {
+const AboutPage = () => {
     return (
         <div className="container">
-                <PageLabel eng="My weblog"
-                    ru="Мои записи"
+                <PageLabel eng="Biography"
+                    ru="Биография"
                 />
         </div>
     )
 }
 
-export default LogPage
+export default AboutPage
