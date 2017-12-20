@@ -1,11 +1,17 @@
 import React from 'react'
 import Video from '../../components/Video'
+import PageLabel from '../../components/PageLabel'
+import './PortfolioPage.css'
 
 const PortfolioPage = () => {
     return (
-        <div>
+        <div className="page_d">
             <Video />
-            Portfolio
+            <div className="container">
+                <PageLabel eng="My works and experience"
+                    ru="Мои работы"
+                />
+            </div>
         </div>
     )
 }

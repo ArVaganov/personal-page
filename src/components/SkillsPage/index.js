@@ -1,12 +1,17 @@
 import React from 'react'
 import InterferenceStageContainer from '../../containers/InterferenceStageContainer'
+import PageLabel from '../../components/PageLabel'
 import './SkillsPage.css'
 
 const SkillsPage = () => (
-    <section>
+    <div className="page_d">
         <InterferenceStageContainer />
-        <div>Skills</div>
-    </section>
+        <div className="container">
+            <PageLabel eng="Skills and abilities"
+                ru="Навыки и способности"
+            />
+        </div>
+    </div>
 )
 
 export default SkillsPage

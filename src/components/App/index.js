@@ -4,6 +4,8 @@ import BioPage from '../../components/BioPage'
 import LogPage from '../../components/LogPage'
 import PortfolioPage from '../../components/PortfolioPage'
 import Navigation from '../../components/Navigation'
+import '../../shared/bootstrap-grid.css'
+import './App.css'
 
 import {
     BrowserRouter as Router,
@@ -11,7 +13,6 @@ import {
     Redirect,
     Switch
 } from 'react-router-dom'
-import './App.css'
 
 const App = () => (
     <Router>

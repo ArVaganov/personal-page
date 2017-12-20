@@ -4,10 +4,10 @@ import './InterferenceStage.css'
 
 const InterferenceStage = (props) => {
     return (
-        <section className="interference-stage">
+        <svg className="interference-stage">
             <Prism {...props.prism} />
             {props.beams}
-        </section>
+        </svg>
     )
 }
 
