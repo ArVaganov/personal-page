@@ -1,9 +1,9 @@
 import React from 'react'
-import SkillsPage from '../../components/SkillsPage'
-import AboutPage from '../../components/AboutPage'
-import LogPage from '../../components/LogPage'
-import PortfolioPage from '../../components/PortfolioPage'
-import Navigation from '../../components/Navigation'
+import SkillsPage from '../SkillsPage'
+import AboutPage from '../AboutPage'
+import LogPage from '../LogPage'
+import Navigation from '../Navigation'
+import Footer from '../Footer'
 import '../../shared/bootstrap-grid.css'
 import './App.css'
 
@@ -24,8 +24,9 @@ const App = () => (
             <Route path="/" exact component={() => <Redirect to="/skills" />} />
             <Route path="/skills" component={SkillsPage} />
             <Route path="/about" component={AboutPage} />
-            <Route path="/portfolio" component={PortfolioPage} />
             <Route path="/log" component={LogPage} />
+
+            <Footer />
         </div>
     </Router>
 )

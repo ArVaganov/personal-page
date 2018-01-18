@@ -6,7 +6,6 @@ const Navigation = (props) => {
     let links = [
         { label: 'Skills', url: '/skills' },
         { label: 'About Me', url: '/about' },
-        { label: 'Portfolio', url: '/portfolio' },
         { label: 'Web log', url: '/log' }
     ]
 
