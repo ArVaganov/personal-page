@@ -1,21 +1,19 @@
 import React from 'react'
-import InterferenceStageContainer from '../../containers/InterferenceStageContainer'
 import PageLabel from '../../components/PageLabel'
 import './SkillsPage.css'
 
 const SkillsPage = () => (
-    <main>
+    <main className="main">
         <div className="page_d">
-            <InterferenceStageContainer />
             <div className="container">
-                <PageLabel eng="Skills and abilities"
+                <PageLabel eng="Skills & abilities"
                     ru="Навыки и способности"
                 />
             </div>
         </div>
         <div className="page__light">
             <div className="container">
-                Какой-то текст
+                <h3>Text sample</h3>
             </div>
         </div>
     </main>

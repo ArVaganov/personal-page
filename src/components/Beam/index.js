@@ -13,14 +13,14 @@ const Beam = (props) => {
             <circle className="beam__collision-point"
                 cx={c.x2}
                 cy={c.y2}
-                r="3"
+                r="4"
                 transform={`translate(${document.body.clientWidth / 2}, 98)`}
                 fill={props.color}
             />
             <circle className="beam__collision-point"
                 cx={c.x3}
                 cy={c.y3}
-                r="3"
+                r="4"
                 transform={`translate(${document.body.clientWidth / 2}, 98)`}
                 fill={props.color}
             />

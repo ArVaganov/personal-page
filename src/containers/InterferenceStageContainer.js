@@ -2,6 +2,12 @@ import React, { Component } from 'react'
 import InterferenceStage from '../components/InterferenceStage'
 import Beam from '../components/Beam'
 
+(function() {
+    const requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
+                                window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+    window.requestAnimationFrame = requestAnimationFrame;
+})();
+
 class InterferenceStageContainer extends Component {
     constructor() {
         super()
@@ -24,14 +30,19 @@ class InterferenceStageContainer extends Component {
     }
 
     componentWillUnmount() {
-        clearInterval(this.state.rotationTimer)
+        cancelAnimationFrame(this.state.rotationId)
     }
-    
+
+    animate = (draw) => {
+        this.setState({rotationId: requestAnimationFrame(function rotatePrism(time) {
+                draw()
+                requestAnimationFrame(rotatePrism)
+            })
+        })
+    }
 
     componentDidMount() {
-        this.setState(() => {
-            return {rotationTimer: setInterval(this.rotatePrism, 20)}
-        })
+        this.animate(this.rotatePrism)
     }
 
     rotatePrism = () => {

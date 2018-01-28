@@ -5,10 +5,32 @@ const Prism = (props) => {
     let { A, B, C } = props.coordinates
     return (
         <g className="prism">
+            <g transform={`translate(${document.body.clientWidth / 2}, 98)`}>
+                <circle className="prism__circle_inner"
+                    cx="0"
+                    cy="0"
+                    r={props.radius - 4}
+                />
+            </g>
+
             <circle className="prism__circle"
                 cx="0"
                 cy="0"
-                r={props.radius - 10}
+                r={props.radius - 14}
+                transform={`translate(${document.body.clientWidth / 2}, 98)`}
+            />
+
+            <circle className="prism__circle_outer"
+                cx="0"
+                cy="0"
+                r={props.radius + 6.5}
+                transform={`translate(${document.body.clientWidth / 2}, 98)`}
+            />
+
+            <circle className="prism__circle"
+                cx="0"
+                cy="0"
+                r={props.radius + 6}
                 transform={`translate(${document.body.clientWidth / 2}, 98)`}
             />
             <polygon className="prism__shape"

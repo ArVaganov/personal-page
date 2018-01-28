@@ -5,5 +5,8 @@
 }
 
 .page__label_l {
-    color: $text-label
+    color: $text-label;
+    @media screen and (max-width: 845px) {
+        text-align: center;
+    }
 }

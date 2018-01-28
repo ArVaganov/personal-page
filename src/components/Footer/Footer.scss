@@ -1,0 +1,50 @@
+@import "../../shared/variables.scss";
+
+.footer {
+    display: flex;
+    background-color: $primary-dark;
+    min-height: 80px;
+    align-items: center;
+}
+
+.footer__container {
+    display: flex;
+    @media screen and (max-width: 845px) {
+        flex-wrap: wrap;
+    }
+}
+
+.footer__city {
+    display: flex;
+    color: $text-label;
+    align-items: center;
+    @media screen and (max-width: 845px) {
+        display: block;
+        padding: 20px;
+        font-size: 16px;
+        text-align: center;
+        width: 100%;
+    }
+}
+
+.footer__social-container {
+    align-items: center;
+    margin-left: auto;
+    @media screen and (max-width: 845px) {
+        padding-bottom: 15px;
+        margin: auto;
+    }
+}
+
+.footer__social-image {
+    height: 28px;
+    opacity: 0.5;
+    transition: 150ms;
+    &:hover {
+        opacity: 1;
+    }
+}
+
+.footer__social-link {
+    margin-right: 20px;
+}

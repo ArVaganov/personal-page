@@ -3,3 +3,19 @@
 .page_d {
     background-color: $primary-dark;
 }
+
+.main {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
+}
+
+.page__light {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
+    background-color: $primary-light;
+    box-shadow: inset 10px 0 0 $primary-dark, inset -10px 0 0 $primary-dark;
+    color: white;
+    border-radius: 5px;
+}

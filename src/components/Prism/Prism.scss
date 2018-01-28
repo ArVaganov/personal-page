@@ -4,13 +4,37 @@
 }
 
 .prism__shape {
-    fill: rgba(45, 199, 166, 0.1);
+    fill: rgba(199, 45, 186, 0.1);
     stroke: lightgray;
     stroke-width: 2;
 }
 
 .prism__circle {
     fill: transparent;
-    stroke: darkslategrey;
+    stroke: rgb(97, 175, 175);
     stroke-width: 2;
 }
+
+
+.prism__circle_inner {    
+    @keyframes rotating {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(-360deg);
+        }
+    }
+    fill: transparent;
+    stroke: darkslategrey;
+    stroke-width: 15;
+    stroke-dasharray: 20, 20, 2 20;
+    animation: rotating 50s linear infinite;
+}
+
+.prism__circle_outer {
+    @extend .prism__circle;
+    stroke-dasharray: 42, 20.5;
+    stroke-width: 5;
+}
+
