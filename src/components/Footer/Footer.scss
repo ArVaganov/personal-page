@@ -5,6 +5,9 @@
     background-color: $primary-dark;
     min-height: 80px;
     align-items: center;
+    @media screen and (max-width: 845px) {
+        min-height: 100px;
+    }
 }
 
 .footer__container {

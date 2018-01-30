@@ -7,6 +7,27 @@ body, html, #root {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
 
+html {
+    &::-webkit-scrollbar {
+        width:16px;
+        padding: 0 5px;
+        margin-right: 5px;
+    }
+
+    &::-webkit-scrollbar-track-piece  {
+        background-color: $primary-faded;
+    }
+
+    &::-webkit-scrollbar-thumb:vertical {
+        height: 40px;
+        border: 4px solid $primary-faded;    
+        background-color: dimgray;
+        border-radius: 100px;
+    }
+    
+    overflow-x: hidden;
+}
+
 main {
     background-color: $primary-dark;
 }

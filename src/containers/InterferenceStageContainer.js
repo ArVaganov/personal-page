@@ -17,10 +17,9 @@ class InterferenceStageContainer extends Component {
             prismRadius: 75,
             prismDecartCoordinates: {},
             beams: [
-                { color: '#ca7c7c', yAxis: -6 },
-                { color: '#65ad65', yAxis: -2 },
-                { color: '#5f98bb', yAxis: 2 },
-                { color: '#b75ab7', yAxis: 6 },
+                { color: '#ca7c7c', yAxis: -22 },
+                { color: '#5f98bb', yAxis: 0 },
+                { color: '#b75ab7', yAxis: 22 },
             ]
         }
     }
@@ -95,15 +94,15 @@ class InterferenceStageContainer extends Component {
     }
 
     computeCords = el => {
-        let [x2, y2] = this.collisionsArrayFormation(-1, el.yAxis, 0, el.yAxis).sort((a, b) => {
-            return (Math.abs(a[0]) < this.state.prismRadius && a[0] < 0) ? -1 : 1
+        let [x2, y2] = this.collisionsArrayFormation(-1, el.yAxis, 0, el.yAxis).sort((a) => {
+            return (Math.sqrt(Math.abs(a[0]) ** 2 + Math.abs(a[1]) ** 2) < this.state.prismRadius && a[0] < 0) ? -1 : 1
         })[0]
 
         let [x3, y3] = this.collisionsArrayFormation(x2, y2, 0, 0).sort((a, b) => {
-            return (Math.abs(a[0]) < this.state.prismRadius && a[0] > 0) ? -1 : 1
+            return (Math.sqrt(Math.abs(a[0]) ** 2 + Math.abs(a[1]) ** 2) < this.state.prismRadius && a[0] > 0) ? -1 : 1
         })[0]
 
-        let [x4, y4] = [document.body.clientWidth / 2, -el.yAxis * 4]
+        let [x4, y4] = [document.body.clientWidth / 2, y3]
 
         return { x2: x2, y2: y2, x3: x3, y3: y3, x4: x4, y4: y4 }
     }
@@ -112,7 +111,7 @@ class InterferenceStageContainer extends Component {
         let { prismDecartCoordinates, prismRadius } = this.state
 
         let beams = this.state.beams.map(el => <Beam
-            coordinates={{ x1: -document.body.clientWidth / 2, y1: el.yAxis * 4, ...this.computeCords(el) }}
+            coordinates={{ x1: -document.body.clientWidth / 2, y1: el.yAxis, ...this.computeCords(el) }}
             key={el.color}
             color={el.color}
         />)

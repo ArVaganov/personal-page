@@ -1,0 +1,54 @@
+// skill
+// skill__title
+// skill__icon
+// skill__description
+@import '../../shared/variables.scss';
+
+.skill {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+    background-color: $primary-light;
+    padding: 12px;
+    max-width: 500px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    &:hover {
+        background-color: $tile-hover;
+        box-shadow: 0 0 20px $primary-dark;
+    }
+    @media screen and (max-width: 845px) {
+        max-width: initial;
+    }
+
+}
+
+.skill__icon-container {
+    min-width: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.skill__icon {
+    max-height: 100px;
+    max-width: 100px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.skill__text-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.skill__title {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.skill__description {
+    color: $text-faded;
+    font-size: 15px;
+}

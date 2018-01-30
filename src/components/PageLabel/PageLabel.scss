@@ -1,11 +1,11 @@
 @import "../../shared/variables.scss";
 
 .page__label_d {
-    color: $text-label
+    color: #fff;
 }
 
 .page__label_l {
-    color: $text-label;
+    color: $text-light;
     @media screen and (max-width: 845px) {
         text-align: center;
     }
