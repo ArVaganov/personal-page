@@ -6,7 +6,7 @@ const Navigation = (props) => {
     let links = [
         { label: 'Skills', url: '/skills' },
         { label: 'About Me', url: '/about' },
-        { label: 'Web log', url: '/log' }
+        { label: 'Personal Log', url: '/log' }
     ]
 
     links = links.map(link => <NavItem label={link.label} url={link.url} active={props.location.pathname === link.url} key={link.label} />)

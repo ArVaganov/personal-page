@@ -18,4 +18,9 @@
     box-shadow: inset 10px 0 0 $primary-dark, inset -10px 0 0 $primary-dark;
     color: white;
     border-radius: 5px;
+    @media screen and (max-width: 845px) {
+        max-width: initial;
+        border-radius: initial;
+        box-shadow: initial;
+    }
 }

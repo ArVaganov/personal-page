@@ -16,7 +16,7 @@ const Footer = () => {
     ]
 
     const imagesJsx = images.map(el => <a className="footer__social-link" key={el.url} href={el.url}>
-        <img className="footer__social-image" src={el.imageLink} />
+        <img className="footer__social-image" src={el.imageLink} alt=""/>
      </a>)
 
     return (
@@ -29,6 +29,12 @@ const Footer = () => {
                     <div className="footer__social-container">
                         {imagesJsx}
                     </div>
+                </div>
+                <div className="footer__contacts">
+                    You can contact me via:<br />
+                    E-mail: <a href="mailto:ar.vaganov@gmail.com">ar.vaganov@gmail.com</a><br />
+                    LinkedIn: <a href="https://www.linkedin.com/in/aleksandr-vaganov-18842a13a/">https://www.linkedin.com/in/aleksandr-vaganov-18842a13a</a><br />
+                    Telegram: <a href="t.me/ar_vaganov">t.me/ar_vaganov</a>
                 </div>
             </div>
         </footer>

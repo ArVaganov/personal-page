@@ -2,8 +2,9 @@
 
 .footer {
     display: flex;
+    flex: 0 0 auto;
+    padding: 20px;
     background-color: $primary-dark;
-    min-height: 80px;
     align-items: center;
     @media screen and (max-width: 845px) {
         min-height: 100px;
@@ -23,9 +24,8 @@
     align-items: center;
     @media screen and (max-width: 845px) {
         display: block;
-        padding: 20px;
+        padding-bottom: 20px;
         font-size: 16px;
-        text-align: center;
         width: 100%;
     }
 }
@@ -35,7 +35,21 @@
     margin-left: auto;
     @media screen and (max-width: 845px) {
         padding-bottom: 15px;
-        margin: auto;
+        margin: initial;
+    }
+}
+
+.footer__contacts {
+    color: white;
+    font-size: 13px;
+    a {
+        color: dimgray;
+        &:link {
+            color: dimgray !important;
+        }
+        &:hover {
+            color: lightgray;
+        }
     }
 }
 

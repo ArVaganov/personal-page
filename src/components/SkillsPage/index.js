@@ -5,28 +5,68 @@ import './SkillsPage.css'
 
 const skills = [
     {
-        title: 'Git Workflow',
-        icon: 'GIT',
-        description: 'About Git',
-    },
-    {
-        title: 'JavaScript',
-        icon: 'Javascript',
-        description: 'Popular Programming Language',
-    },
-    {
         title: 'HTML',
         icon: 'HTML',
-        description: 'HyperText Markup Language 5\'th revision',
+        description: 'HyperText Markup Language',
     },
     {
         title: 'CSS',
         icon: 'CSS',
         description: 'Cascading Style Sheets',
-    }
+    },
+    {
+        title: 'JavaScript',
+        icon: 'Javascript',
+        description: 'Programming Language',
+    },
+    {
+        title: 'React',
+        icon: 'React',
+        description: 'A JavaScript library for building user interfaces',
+    },
+    {
+        title: 'Redux',
+        icon: 'Redux',
+        description: 'Redux is a predictable state container for JavaScript apps',
+    },
+    {
+        title: 'Git Workflow',
+        icon: 'GIT',
+        description: 'Version control system',
+    },
+    {
+        title: 'GraphQL',
+        icon: 'GraphQL',
+        description: 'A query language',
+    },
+    {
+        title: 'SQL',
+        icon: 'SQL',
+        description: 'Structured query language',
+    },
+    {
+        title: 'VueJs',
+        icon: 'Vue',
+        description: 'A progressive JavaScript Framework',
+    },
+    {
+        title: 'Webpack',
+        icon: 'Webpack',
+        description: 'A module bundler',
+    },
+    {
+        title: 'Python.',
+        icon: 'Python',
+        description: 'Programming Language',
+    },
+    {
+        title: 'Soft skills',
+        icon: 'SoftSkills',
+        description: 'Personal attributes, personality traits, inherent social cues, and communication abilities',
+    },
 ]
 
-const skillsJsx = skills.map(skill => <SkillBlock {...skill} />)
+const skillsJsx = skills.map(skill => <SkillBlock key={skill.icon} {...skill} />)
 
 const SkillsPage = () => (
     <main className="main">
