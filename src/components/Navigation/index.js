@@ -1,4 +1,5 @@
 import React from 'react'
+import LanguageSwitchContainer from '../../containers/LanguageSwitchContainer'
 import './Navigation.css'
 import NavItem from '../../components/NavItem'
 
@@ -13,7 +14,10 @@ const Navigation = (props) => {
 
     return (
         <div className="navigation">
-            {links}
+            <div className="navigation__links-container">
+                {links}
+            </div>
+            <LanguageSwitchContainer />
         </div>
     )
 }
