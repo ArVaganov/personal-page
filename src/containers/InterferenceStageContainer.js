@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import InterferenceStage from '../components/InterferenceStage'
 import Beam from '../components/Beam'
 
+import { connect } from 'react-redux'
+
 (function() {
     const requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
                                 window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
@@ -9,8 +11,8 @@ import Beam from '../components/Beam'
 })();
 
 class InterferenceStageContainer extends Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
 
         this.state = {
             prismAngle: 0,
@@ -18,8 +20,11 @@ class InterferenceStageContainer extends Component {
             prismDecartCoordinates: {},
             beams: [
                 { color: '#ca7c7c', yAxis: -22 },
-                { color: '#5f98bb', yAxis: 0 },
-                { color: '#b75ab7', yAxis: 22 },
+                { color: '#5f98bb', yAxis: -5 },
+                { color: '#b75ab7',  yAxis: 22 },
+                { color: 'lightgray', yAxis: -30 },
+                { color: 'red', yAxis: 5 },
+                { color: 'cyan',  yAxis: 30 },
             ]
         }
     }

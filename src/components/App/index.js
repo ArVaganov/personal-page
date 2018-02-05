@@ -15,21 +15,26 @@ import {
     Switch
 } from 'react-router-dom'
 
-const App = () => (
-    <Router>
-        <div className="react-app">
-            <Switch>
-                <Navigation />
-            </Switch>
-            <InterferenceStageContainer />
-            <Route path="/" exact component={() => <Redirect to="/skills" />} />
-            <Route path="/skills" component={SkillsPage} />
-            <Route path="/about" component={AboutPage} />
-            <Route path="/log" component={LogPage} />
+import { Provider } from 'react-redux'
+import { configureStore } from '../../configureStore';
 
-            <Footer />
-        </div>
-    </Router>
+const App = () => (
+    <Provider store={configureStore()}>
+        <Router>
+            <div className="react-app">
+                <Switch>
+                    <Navigation />
+                </Switch>
+                <InterferenceStageContainer />
+                <Route path="/" exact component={() => <Redirect to="/skills" />} />
+                <Route path="/skills" component={SkillsPage} />
+                <Route path="/about" component={AboutPage} />
+                <Route path="/log" component={LogPage} />
+
+                <Footer />
+            </div>
+        </Router>
+    </Provider>
 )
 
 export default App

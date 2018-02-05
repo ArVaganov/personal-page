@@ -1,18 +1,11 @@
-import React from 'react'
+import React, { Component } from 'react'
 import LanguageSwitch from '../components/LanguageSwitch'
 import { connect } from 'react-redux'
-
-const getCurrentLanguage = (language) => {
-    if (language === 'eng') {
-        return 'eng'
-    } else if (language === 'ru') {
-        return 'ru'
-    }
-}
+import { setLanguage } from '../actions'
 
 const mapStateToProps = (state) => {
     return {
-        language: getCurrentLanguage(state.language)
+        language: state.language.name,
     }
 }
 
@@ -24,10 +17,21 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-const LanguageSwitchContainer = () => {
-    return (
-        <LanguageSwitch language="ru"/>
-    )
+class LanguageSwitchContainer extends Component {
+    constructor(props) {
+        super(props)
+        this.setLanguage = this.setLanguage.bind(this)
+    }
+
+    setLanguage(language) {
+        this.props.onLanguageClick(language)
+    }
+
+    render() {
+        return (
+            <LanguageSwitch currentLanguage={this.props.language} setLanguage={this.setLanguage}/>
+        )
+    }
 }
 
 const ConnectedLanguageSwitchContainer = connect(

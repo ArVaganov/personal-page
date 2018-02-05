@@ -1,15 +1,15 @@
 import React from 'react'
 import * as icons from './icons'
 import './SkillBlock.css'
+import { connect } from 'react-redux'
 
-
-const SkillBlock = ({ title, icon, description }) => {
+const SkillBlock = ({ title, icon, description, lang }) => {
     return (
         <div className="skill">
             <div className="skill__icon-container">
                 <img className="skill__icon" src={icons[icon]} alt="skill"/>
             </div>
-            <div className="skill__text-container">
+            <div className="skill__text-container" style={{ background: lang == 'en' ? 'red' : 'initial'}}>
                 <div className="skill__title">{title}</div>
                 <div className="skill__description">{description}</div>
             </div>
@@ -17,4 +17,6 @@ const SkillBlock = ({ title, icon, description }) => {
     )
 }
 
-export default SkillBlock
+export default connect(({ language : { name } }) => {
+    return { lang: name }
+})(SkillBlock)
