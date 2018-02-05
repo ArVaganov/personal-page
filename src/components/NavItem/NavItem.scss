@@ -9,15 +9,11 @@
     text-decoration: none;
     color: $text-light;
     &:hover {
-        color: $text-faded;
+        // color: $text-faded;
     }
 
     &_active {
         @extend .navigation__link;
-        color: $text-label;
-
-        &:hover {
-            color: $text-label
-        }
+        text-decoration: underline;
     }
 }

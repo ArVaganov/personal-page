@@ -8,9 +8,9 @@ const LanguageSwitch = ({ currentLanguage, setLanguage }) => {
                 className={cx({navigation__language_active: currentLanguage === 'en'})}
                 onClick={() => setLanguage('en')}
             >
-                EN 
+                EN
             </span>
-                / 
+            / 
             <span 
                 className={cx({navigation__language_active: currentLanguage === 'ru'})}
                 onClick={() => setLanguage('ru')}

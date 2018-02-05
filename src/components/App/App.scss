@@ -15,14 +15,13 @@ html {
     }
 
     &::-webkit-scrollbar-track-piece  {
-        background-color: $primary-faded;
+        background-color: $primary-light;
     }
 
     &::-webkit-scrollbar-thumb:vertical {
         height: 40px;
-        border: 4px solid $primary-faded;    
-        background-color: dimgray;
-        border-radius: 100px;
+        border: 4px solid $primary-light;    
+        background-color: $primary-dark;
     }
     
     overflow-x: hidden;
