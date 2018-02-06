@@ -2,7 +2,6 @@ import React from 'react'
 import * as icons from './icons'
 import './SkillBlock.css'
 
-
 const SkillBlock = ({ title, icon, description }) => {
     return (
         <div className="skill">

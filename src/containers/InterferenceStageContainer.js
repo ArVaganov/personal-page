@@ -9,17 +9,18 @@ import Beam from '../components/Beam'
 })();
 
 class InterferenceStageContainer extends Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
 
         this.state = {
             prismAngle: 0,
             prismRadius: 75,
             prismDecartCoordinates: {},
             beams: [
-                { color: '#ca7c7c', yAxis: -22 },
-                { color: '#5f98bb', yAxis: 0 },
-                { color: '#b75ab7', yAxis: 22 },
+                { color: 'rgb(30, 119, 100)', yAxis: -21 },
+                { color: 'rgb(38, 150, 126)',  yAxis: -7 },
+                { color: 'rgb(50, 185, 156)', yAxis: 7 },
+                { color: 'rgb(57, 208, 175)', yAxis: 21 },
             ]
         }
     }

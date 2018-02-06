@@ -4,20 +4,16 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0 8px;
+    padding: 10px 8px;
     height: 100%;
     text-decoration: none;
     color: $text-light;
     &:hover {
-        color: $text-faded;
+        // color: $text-faded;
     }
 
     &_active {
         @extend .navigation__link;
-        color: $text-label;
-
-        &:hover {
-            color: $text-label
-        }
+        text-decoration: underline;
     }
 }

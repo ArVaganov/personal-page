@@ -1,14 +1,20 @@
 // Wrappers
-$primary-light: #36393f;
-$primary-faded: #2f3136;
-$primary-dark: #202225;
-$tile-hover: #3e4249;
+// $primary-light: #36393f;
+// $primary-faded: #2f3136;
+// $primary-dark: #202225;
+// $tile-hover: #3e4249;
+
+$primary-light: #e5effd;
+$lightness: #edf5ff;
+$primary-faded: #cedef7;
+$primary-dark: #b5c3e0;
+$tile-hover: #97a2b4;
 
 // Typography
-$text-label: #43b581;
-$text-dark: hsla(0,0%,100%,0.6);
-$text-light: #fff;
-$text-faded: rgb(197, 197, 197);
+$text-label: #12529c;
+$text-dark: #202020;
+$text-light: rgb(32, 32, 32);
+$text-faded: rgb(71, 71, 71);
 
 // Elements
 $btn: #7289da;
