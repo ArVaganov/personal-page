@@ -1,16 +1,11 @@
 import React from 'react'
+import NavItem from '../../components/NavItem'
 import LanguageSwitchContainer from '../../containers/LanguageSwitchContainer'
 import './Navigation.css'
-import NavItem from '../../components/NavItem'
 
-const Navigation = (props) => {
-    let links = [
-        { label: 'Skills', url: '/skills' },
-        { label: 'About Me', url: '/about' },
-        { label: 'Personal Log', url: '/log' }
-    ]
+const Navigation = ({links, location, language}) => {
 
-    links = links.map(link => <NavItem label={link.label} url={link.url} active={props.location.pathname === link.url} key={link.label} />)
+    links = links.map(link => <NavItem label={link.label[language]} url={link.url} active={location.pathname === link.url} key={link.label.en} />)
 
     return (
         <div className="navigation">
