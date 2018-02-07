@@ -2,10 +2,7 @@
 
 .page_d {
     background-color: $primary-light;
-    box-shadow: inset 0px -1px 0px 0px $primary-dark,
-    inset 0px 1px 0px 0px $primary-dark,
-    inset 10px 0 0 $primary-dark,
-    inset -10px 0 0 $primary-dark;
+    box-shadow: inset 0px 3px 0px 0px $primary-dark,
 }
 
 .main {
@@ -19,9 +16,9 @@
     flex-direction: column;
     flex: 1 0 auto;
     background-color: white;
-    box-shadow: inset 10px 0 0 $primary-dark, inset -10px 0 0 $primary-dark;
+    box-shadow: inset 0px -3px 0 0 $primary-dark;
     color: $text-dark;
-    @media screen and (max-width: 845px) {
+    @media screen and (max-width: 842px) {
         max-width: initial;
         border-radius: initial;
         box-shadow: initial;

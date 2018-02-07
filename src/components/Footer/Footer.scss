@@ -4,7 +4,7 @@
     display: flex;
     flex: 0 0 auto;
     padding: 20px;
-    background-color: $primary-light;
+    background-color: #1d1d26;
     box-shadow: inset 0px 1px 0px 0px $primary-dark;
     min-height: 130px;
     @media screen and (max-width: 845px) {
@@ -42,7 +42,7 @@
 }
 
 .footer__contacts {
-    color: $text-light;
+    color: #eee;
     font-size: 13px;
     a {
         color: dimgray;
@@ -57,10 +57,9 @@
 
 .footer__social-image {
     height: 28px;
-    // filter: grayscale(50%);
-    // transition: 150ms;
+    opacity: 0.7;
     &:hover {
-        // filter: grayscale(0);
+        opacity: 1;
     }
 }
 

@@ -1,19 +1,38 @@
 @import "../../shared/variables.scss";
 
+@keyframes showUnderline {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
 .navigation__link {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 10px 8px;
+    padding: 5px 12px;
     height: 100%;
     text-decoration: none;
-    color: $text-light;
-    &:hover {
-        // color: $text-faded;
-    }
-
+    color: $primary-light;
     &_active {
         @extend .navigation__link;
-        text-decoration: underline;
+        color: $text-label;
     }
+}
+
+.navigation__link-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &:hover .navigation__link-underline {
+        animation: showUnderline 0.3s cubic-bezier(0.07, 1.06, 1, 1) forwards;
+    }
+}
+
+.navigation__link-underline {
+    height: 2px;
+    background-color: $text-label;
 }

@@ -15,7 +15,7 @@ const Prism = ({ location, ...props}) => {
     let { A, B, C } = props.coordinates
     return (
         <g className="prism">
-            <g transform={`translate(${document.body.clientWidth / 2}, 98)`}>
+            <g transform={`translate(${document.body.clientWidth / 2}, 115)`}>
                 <circle className="prism__circle_inner"
                     cx="0"
                     cy="0"
@@ -27,10 +27,10 @@ const Prism = ({ location, ...props}) => {
                 cx="0"
                 cy="0"
                 r={props.radius - 14}
-                transform={`translate(${document.body.clientWidth / 2}, 98)`}
+                transform={`translate(${document.body.clientWidth / 2}, 115)`}
             />
 
-            <g transform={`translate(${document.body.clientWidth / 2}, 98)`}>
+            <g transform={`translate(${document.body.clientWidth / 2}, 115)`}>
                 <circle className="prism__circle_outer"
                     cx="0"
                     cy="0"
@@ -43,11 +43,11 @@ const Prism = ({ location, ...props}) => {
                 cx="0"
                 cy="0"
                 r={props.radius + 6}
-                transform={`translate(${document.body.clientWidth / 2}, 98)`}
+                transform={`translate(${document.body.clientWidth / 2}, 115)`}
             />
             <polygon className="prism__shape"
                 points={`${A[0]},${A[1]}, ${B[0]},${B[1]}, ${C[0]},${C[1]}`}
-                transform={`translate(${document.body.clientWidth / 2}, 98)`}
+                transform={`translate(${document.body.clientWidth / 2}, 115)`}
             />
         </g>
     )
