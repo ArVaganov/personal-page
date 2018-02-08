@@ -1,5 +1,5 @@
 import React from 'react'
-import PageLabel from '../../components/PageLabel'
+import PageLabelContainer from '../../containers/PageLabelContainer'
 import SkillBlock from '../SkillBlock'
 import './SkillsPage.css'
 
@@ -28,6 +28,11 @@ const skills = [
         title: 'Redux',
         icon: 'Redux',
         description: 'Redux is a predictable state container for JavaScript apps',
+    },
+    {
+        title: 'Laravel',
+        icon: 'Laravel',
+        description: 'Awesome MVC PHP framework for building web-applications',
     },
     {
         title: 'Git Workflow',
@@ -72,14 +77,21 @@ const SkillsPage = () => (
     <main className="main">
         <div className="page_d">
             <div className="container">
-                <PageLabel eng="Skills & abilities"
-                    ru="Навыки и способности"
+                <PageLabelContainer text={{
+                    eng: "Skills & abilities",
+                    rus: "Навыки и технологии",
+                }}
                 />
             </div>
         </div>
         <div className="page__light">
             <div className="container">
-                <h3>Text sample</h3>
+                <PageLabelContainer text={{
+                        eng: "Here are technologies that I use in my work. Expand for details.",
+                        rus: "В списке представленны технологии которые я повседневно использую в разработке. Кликните по элементу списка для подробностей.",
+                    }}
+                    size='md'
+                />
                 {skillsJsx}
             </div>
         </div>

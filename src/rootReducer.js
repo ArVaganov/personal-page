@@ -2,7 +2,7 @@ import { combineReducers } from 'redux'
 import { SET_LANGUAGE } from './constants';
 
 const initialState = {
-    name: 'en',
+    name: 'eng',
 }
 function languageReducer(state = initialState, action) {
     const { type, name } = action

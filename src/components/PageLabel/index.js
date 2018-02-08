@@ -2,8 +2,13 @@ import React from 'react'
 import './PageLabel.css'
 
 const PageLabel = (props) => {
-    let { eng, ru, dark } = props
-    return <h1 className={dark ? 'page__label_d' : 'page__label_l'}>{eng}</h1>
+    let { text, language, size } = props
+    switch(size) {
+        case 'sm': return <h4 className='page__label_l'>{text[language]}</h4>;
+        case 'md': return <h3 className='page__label_l'>{text[language]}</h3>;
+        case 'lg': return <h1 className='page__label_l'>{text[language]}</h1>;
+        default: return <h1 className='page__label_l'>{text[language]}</h1>;
+    }
 }
 
 export default PageLabel

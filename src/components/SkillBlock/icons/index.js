@@ -10,6 +10,7 @@ import SQL from './sql.svg'
 import Vue from './vue.svg'
 import Webpack from './webpack.svg'
 import Redux from './redux.svg'
+import Laravel from './laravel.svg'
 
 export { 
     CSS,
@@ -24,4 +25,5 @@ export {
     Vue,
     Webpack,
     Redux,
+    Laravel,
 }

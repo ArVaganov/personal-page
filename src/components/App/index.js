@@ -1,7 +1,7 @@
 import React from 'react'
 import { Provider } from 'react-redux'
 import { configureStore } from '../../configureStore';
-import Footer from '../Footer'
+import FooterContainer from '../../containers/FooterContainer'
 import LogPage from '../LogPage'
 import AboutPage from '../AboutPage'
 import SkillsPage from '../SkillsPage'
@@ -32,7 +32,7 @@ const App = () => (
                 <Route path="/skills" component={SkillsPage} />
                 <Route path="/about" component={AboutPage} />
                 <Route path="/log" component={LogPage} />
-                <Footer />
+                <FooterContainer />
             </div>
         </Router>
     </Provider>

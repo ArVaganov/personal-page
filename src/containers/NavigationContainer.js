@@ -10,22 +10,22 @@ const NavigationContainer = ({ language, location }) => {
     let links = [
         { 
             label: {
-                en: 'Skills',
-                ru: 'Навыки',
+                eng: 'Skills',
+                rus: 'Навыки',
             },
             url: '/skills', 
         },
         {
             label: {
-                en: 'About Me',
-                ru: 'Обо мне',
+                eng: 'About Me',
+                rus: 'Обо мне',
             },
             url: '/about',
         },
         {
             label: {
-                en: 'Log',
-                ru: 'Заметки',
+                eng: 'Log',
+                rus: 'Заметки',
             },
             url: '/log',
         }

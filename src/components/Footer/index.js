@@ -6,7 +6,7 @@ import hackerrank from './hackerrank.svg'
 
 import './Footer.css'
 
-const Footer = () => {
+const Footer = ({ language, location, contactExhortation }) => {
 
     const images = [
         {imageLink: youtube, url: 'https://www.youtube.com/channel/UC6lQUFePlqv5Zx5P9VENO7A'},
@@ -24,14 +24,14 @@ const Footer = () => {
             <div className="container">
                 <div className="footer__container">
                     <div className="footer__city">
-                        {`Sverdlova st. UFA, Russian Federation. ${new Date().getFullYear()}`}
+                        {`${location[language]}. ${new Date().getFullYear()}`}
                     </div>
                     <div className="footer__social-container">
                         {imagesJsx}
                     </div>
                 </div>
                 <div className="footer__contacts">
-                    You can contact me via:<br />
+                    {contactExhortation[language]}<br />
                     E-mail: <a href="mailto:ar.vaganov@gmail.com">ar.vaganov@gmail.com</a><br />
                     LinkedIn: <a href="https://www.linkedin.com/in/aleksandr-vaganov-18842a13a/">https://www.linkedin.com/in/aleksandr-vaganov-18842a13a</a><br />
                     Telegram: <a href="t.me/ar_vaganov">t.me/ar_vaganov</a>

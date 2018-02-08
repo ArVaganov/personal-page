@@ -1,24 +1,51 @@
 import React from 'react'
-import PageLabel from '../../components/PageLabel'
+import PageLabelContainer from '../../containers/PageLabelContainer'
+import Photo from './photo.jpg'
+import './AboutPage.css'
 
 const AboutPage = () => {
     return (
         <main className="main">
             <div className="page_d">
                 <div className="container">
-                    <PageLabel eng="Biography"
-                        ru="Биография"
-                    />
+                <PageLabelContainer text={{
+                        eng: "Biography",
+                        rus: "Биография",
+                    }}
+                />
                 </div>
             </div>
             <div className="page__light">
                 <div className="container">
-                    <h3>Text sample. Bio.</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit iusto fugiat, sed nisi dolorum nam dolores placeat cum temporibus! Unde pariatur sunt sint soluta, itaque, dolor iste maiores doloribus optio quibusdam ullam vero eius iusto ipsam saepe ratione placeat, cupiditate distinctio minima. Hic fugiat, minima corporis modi magni ab aspernatur assumenda! Porro quia nihil sint odio perspiciatis eligendi cum aliquam voluptate quibusdam, laborum veritatis ad, sapiente maiores consectetur! Corporis voluptate, nemo rerum suscipit, praesentium sunt nam consequuntur repudiandae nihil culpa fugiat voluptatibus debitis nisi et laborum sit dolorem magni iusto, minus sequi accusamus ea eos soluta. Quidem aliquam repellat quam maiores dolorem sed officia nam quos iure odio, exercitationem laboriosam id tempore nostrum optio maxime necessitatibus doloribus corrupti nihil repudiandae, libero vero aperiam voluptatibus veritatis. Harum recusandae repellendus reprehenderit fugiat, voluptas doloremque aspernatur exercitationem quasi maxime alias sequi. Excepturi iusto accusantium nobis ipsum consequatur porro eos consequuntur fugit dicta, officia libero sapiente pariatur, atque impedit quis modi officiis asperiores! Voluptates dolore deserunt eveniet ducimus. Sint, sunt harum? Eos voluptatem perferendis deserunt optio, ducimus aliquam magnam tenetur eaque temporibus minima. Rem nostrum possimus error aliquid provident quod consequatur recusandae quo ipsam cupiditate dolores animi perspiciatis, vero enim iste quae illo illum deserunt facere beatae non porro sunt repellendus nulla? Recusandae eum perferendis ea perspiciatis, officiis, exercitationem adipisci beatae eius minima nam facere odit. Iusto laudantium, nisi dolorem labore, id commodi autem repellendus sapiente quae eum cum cupiditate modi! Praesentium, quae impedit consectetur, deserunt vitae reiciendis a incidunt officia exercitationem labore omnis?</p>
-                    <svg height="204px" width="404px">
-                        <rect x="2" y="2" width="400px" height="200px" fill="lightgray" stroke="dimgray" rx="5" ry="5" strokeWidth="2"/>
-                    </svg>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est, molestiae consectetur. Excepturi earum, sed inventore pariatur et nulla cum eveniet autem doloribus non distinctio quisquam ex ut labore culpa asperiores obcaecati tempore. Eius consequatur, nulla enim autem ex saepe fuga? Fugiat consequatur quos iste suscipit, culpa perspiciatis autem iusto magnam, error beatae adipisci molestiae. Saepe, temporibus accusantium aspernatur reprehenderit, illum quasi a sapiente asperiores culpa, ab eos dicta dolore non officia ullam cumque magnam ex debitis nam perferendis! Quis, vel. Inventore iusto dolore fugiat autem recusandae voluptas eum quia sunt nisi officia blanditiis nostrum molestias eos tenetur temporibus ut, sequi dignissimos culpa asperiores veritatis dolores officiis. Rem vero explicabo sequi. Incidunt, laboriosam? Ea quas numquam facere iusto expedita quibusdam sit nisi distinctio accusantium laudantium inventore error voluptatum illum facilis, deleniti debitis voluptates quam eius dignissimos sint nostrum modi ipsa repellendus? Magni obcaecati sunt, doloremque maxime nulla dolor tenetur, ducimus, et provident molestias repellat earum laudantium minima. In, neque a, dignissimos accusamus alias harum praesentium vero nisi tempore expedita vitae iste cumque quis rerum. Assumenda quam tempore laboriosam corporis, fuga doloremque accusamus, nulla illo tempora, sit molestiae quis iste dicta inventore delectus? Blanditiis consequuntur eaque assumenda exercitationem cumque vitae quas omnis deserunt corrupti maiores accusamus aliquid dolores, maxime in laudantium inventore aut molestiae pariatur incidunt alias. Excepturi eaque doloribus vitae dolorem voluptas iusto voluptate, hic expedita eveniet repudiandae, neque omnis quibusdam non debitis. Ipsa quia reiciendis incidunt labore numquam fugiat ducimus dolor hic explicabo qui! Est quae temporibus provident tenetur officia sed dolore! Tenetur illo possimus doloremque voluptas repellendus! Officiis, nesciunt fuga dicta molestiae omnis illo, quis, consequatur possimus harum voluptates reprehenderit blanditiis praesentium temporibus enim voluptatum ut amet tempore eius doloremque eligendi voluptate voluptatibus dolore quo. Culpa incidunt, mollitia ipsa fuga et, dolorum asperiores tempore facilis dolores iusto molestiae, quibusdam veritatis beatae ratione eius. Exercitationem beatae optio id error cumque nisi alias assumenda facilis provident natus aliquid quis iure quaerat animi, temporibus tempora est amet earum magnam ullam quia? Neque tempore aperiam beatae facere nesciunt dicta culpa et aspernatur cumque nemo voluptatem ea, consequuntur voluptatibus ut inventore minus delectus fuga nobis earum aut? Veritatis, suscipit doloremque non placeat accusamus architecto officiis voluptatem voluptatibus eaque cupiditate vero animi deleniti maxime debitis quod dolores itaque! Repellat enim asperiores minus iste maiores illum dicta nulla deserunt voluptates quasi, ipsum obcaecati non similique, accusamus minima aut. Quibusdam, porro minus necessitatibus odio quae aut dolores!</p>
+                    <img src={Photo} alt="Alexander's" className="about__photo" />
+                    <PageLabelContainer text={{
+                            eng: 'Text sample. Bio',
+                            rus: '1. Персональные данные и краткая автобиография'
+                        }}
+                        size="sm"
+                    />
+                    <p>Ваганов Александр Сергеевич, гражданин Российской Федерации родился 5 июля 1990 года в г. Магнитогорск Челябинской области. В 2013 году получил высшее образование (бакалавриат) по направлению "Физико-математическое образование". В 2015 году закончил курс обучения по профилю "Физика и Астрономия" (магистратура), направление "Педагогическое образование".  В октябре 2015 года поступил в ИПСМ РАН на направление подготовки: 03.06.01 физика и астрономия, профиль: 01.04.07 - физика конденсированного состояния. Протоколом ученого совета №17-15 от 15 декабря 2015 года утверждена тема научного исследования «Акустико-эмиссионный контроль качества диффузионной сварки, применяемой при изготовлении полой широкохордной лопатки», утверждена ученым советом ИПСМ РАН, протокол № 17-15 от 15 декабря 2015 года.». По совместительству работал в лаборатории №4 «Наноматериалы и нанотехнологии» в должности стажера-исследователя до января 2018 года.
+                    <p>C зимы 2016 года занимается разработкой интерфейсов, созданием веб-проектов на любительском уровне. С марта 2017 официально трудится в БГПУ им. М. Акмуллы на должности старшего программиста отдела аппаратно-програмного обеспечения.</p>
+                    </p>
+                    <h4>2. Достижения до поступления в аспирантуру</h4>
+                    <p>Во время обучения в БГПУ участвовал в 2-х конференциях, 3-х олимпиадах. Получал призовые места в конкурсах.
+                    Проходил педагогическую практику в лицее № 1 г. Салават и гимназии № 39 г. Уфы.
+                    Проходил стажировку в г. Силигури (Индия).</p>
+                    <p>Публикация статьи: Gosh. M, Vaganov A.S. Yanbekov A.A, Penkina E.A., Zhdanov E.R., Izmailov R.N «Models comparison in the Dark Matter problem». // Bulletin of Chelyabinsk State University. – 2015. №3 P.24-25</p>
+                    <p>Издание учебно-методических материалов: Ваганов А.С. Курс лабораторных работ «Анализ данных, полученных с орбитального телескопа Swift». 10 экз.</p>
+                    <h4>3. Достижения в освоении образовательной программы аспирантуры</h4>
+                    <p>Сдан экзамен кандидатского минимума по предмету иностранный язык (Английский язык) с отметкой «отлично».</p>
+                    <p>Реферативный перевод работы «Local strain and damage measurements on a composite with digital image correlation and acoustic emission».</p>
+                    <p>Сдан экзамен кандидатского минимума по предмету история и философия науки на отметку «отлично». Реферат: «Исторические взгляды ученых и философов на природу звука».</p>
+                    <p>Сданы 2 зачетные единицы по дисциплине «Основы научно-исследовательской деятельности».<br/>
+                    Сданы 2 зачетные единицы по дисциплине «Научно-исследовательский семинар».
+                    Участие в конференции УМЗНМ-2016.</p>
+                    <h4>4. Достижения в научно-исследовательской деятельности</h4>
+                    <p>Участие в инициативных научных исследованиях:
+                    Участвовал в создании методики и исследовании акустико-эмиссионным методом образцов, полученных из сплава ВТ-6 с помощью диффузионной сварки.</p>
+                    <h4>5. Достижения в общественной деятельности, спорте, других направлениях деятельности</h4>
+                    <p>Играет на музыкальных инструментах (гитара/пианино), совершенствуется в творчестве.
+                    Участвует в популяризации российской науки: Дважды выступал в сюжетах на телеканале БСТ в рубрике «Наука» и в рубрике новостей. Выступал в качестве эксперта-комментатора при показе научно-популярных фильмов детям в дни Российской науки в АНРБ и выступал с лекциями в планетарии в г. Уфе.</p>
                 </div>
             </div>
         </main>

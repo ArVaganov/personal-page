@@ -3,11 +3,7 @@ import LanguageSwitch from '../components/LanguageSwitch'
 import { connect } from 'react-redux'
 import { setLanguage } from '../actions'
 
-const mapStateToProps = (state) => {
-    return {
-        language: state.language.name,
-    }
-}
+const mapStateToProps = (state) => ({ language: state.language.name })
 
 const mapDispatchToProps = (dispatch) => {
     return {

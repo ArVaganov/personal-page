@@ -5,7 +5,12 @@ import './Navigation.css'
 
 const Navigation = ({links, location, language}) => {
 
-    links = links.map(link => <NavItem label={link.label[language]} url={link.url} active={location.pathname === link.url} key={link.label.en} />)
+    links = links.map(link => <NavItem
+        key={link.label.eng} 
+        label={link.label[language]}
+        url={link.url} 
+        active={location.pathname === link.url}
+    />)
 
     return (
         <div className="navigation">

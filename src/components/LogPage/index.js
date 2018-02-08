@@ -1,14 +1,16 @@
 import React from 'react'
-import PageLabel from '../../components/PageLabel'
+import PageLabelContainer from '../../containers/PageLabelContainer'
 
 const LogPage = () => {
     return (
         <main className="main">
             <div className="page_d">
                 <div className="container">
-                    <PageLabel eng="My weblog"
-                        ru="Мои записи"
-                    />
+                    <PageLabelContainer text={{
+                        eng: "My weblog",
+                        rus: "Заметки",
+                    }}
+                />
                 </div>
             </div>
             <div className="page__light">
