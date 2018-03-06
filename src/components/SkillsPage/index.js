@@ -60,14 +60,9 @@ const skills = [
         description: 'A module bundler',
     },
     {
-        title: 'Python.',
-        icon: 'Python',
-        description: 'Programming Language',
-    },
-    {
         title: 'Soft skills',
         icon: 'SoftSkills',
-        description: 'Personal attributes, personality traits, inherent social cues, and communication abilities',
+        description: 'Personal attributes, personality traits and communication abilities',
     },
 ]
 
@@ -92,7 +87,9 @@ const SkillsPage = () => (
                     }}
                     size='md'
                 />
-                {skillsJsx}
+                <div className="skills-container">
+                    {skillsJsx}
+                </div>
             </div>
         </div>
     </main>
