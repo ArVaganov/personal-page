@@ -10,7 +10,7 @@ const Footer = ({ language, location, contactExhortation }) => {
 
     const images = [
         {imageLink: youtube, url: 'https://www.youtube.com/channel/UC6lQUFePlqv5Zx5P9VENO7A'},
-        {imageLink: github, url: 'https://github.com/ArVaganov'},
+        {imageLink: github, url: 'https://github.com/akimy'},
         {imageLink: facebook, url: 'https://www.facebook.com/ar.vaganov'},
         {imageLink: hackerrank, url: 'https://www.hackerrank.com/ar_vaganov'},
     ]
